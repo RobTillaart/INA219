@@ -96,7 +96,7 @@ unittest(test_configuration)
 
 unittest(test_calibration)
 {
-  IN219 INA(0x40);
+  INA219 INA(0x40);
   // assertTrue(INA.begin());
 
   // only errors can be tested
@@ -110,7 +110,7 @@ unittest(test_calibration)
 
 unittest(test_setMode)
 {
-  IN219 INA(0x40);
+  INA219 INA(0x40);
   // assertTrue(INA.begin());
 
   // only errors can be tested
