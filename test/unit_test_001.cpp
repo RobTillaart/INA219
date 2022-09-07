@@ -32,8 +32,6 @@
 #include <ArduinoUnitTests.h>
 
 
-#include "Arduino.h"
-#include "Wire.h"
 #include "INA219.h"
 
 
@@ -110,7 +108,7 @@ unittest(test_calibration)
   assertFalse(INA.setMaxCurrentShunt(10, 0.0009));
 }
 
-
+/*
 unittest(test_setMode)
 {
   INA219 INA(0x40);
@@ -120,19 +118,19 @@ unittest(test_setMode)
   assertFalse(INA.setMode(8));
   assertFalse(INA.setMode(255));
   assertFalse(INA.setMode(-1));
-  /*
-  assertTrue(INA.shutDown());
-  assertTrue(INA.setModeShuntTrigger());
-  assertTrue(INA.setModeBusTrigger());
-  assertTrue(INA.setModeShuntBusTrigger());
-  assertTrue(INA.setModeADCOff());
-  assertTrue(INA.setModeShuntContinuous());
-  assertTrue(INA.setModeBusContinuous());
-  assertTrue(INA.setModeShuntBusContinuous());
-  assertEqual(0, INA.getMode());
-  */
-}
 
+  // assertTrue(INA.shutDown());
+  // assertTrue(INA.setModeShuntTrigger());
+  // assertTrue(INA.setModeBusTrigger());
+  // assertTrue(INA.setModeShuntBusTrigger());
+  // assertTrue(INA.setModeADCOff());
+  // assertTrue(INA.setModeShuntContinuous());
+  // assertTrue(INA.setModeBusContinuous());
+  // assertTrue(INA.setModeShuntBusContinuous());
+  // assertEqual(0, INA.getMode());
+
+}
+*/
 
 unittest_main()
 
