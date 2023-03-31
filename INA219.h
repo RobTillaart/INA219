@@ -30,11 +30,13 @@ public:
   bool     isConnected();
 
 
-  //  CORE FUNCTIONS            //  Register
-  float    getShuntVoltage();   //  01
-  float    getBusVoltage();     //  02
-  float    getPower();          //  03
-  float    getCurrent();        //  04
+  //  CORE FUNCTIONS               //  Register
+  float    getShuntVoltage();      //  01
+  float    getBusVoltage();        //  02
+  float    getPower();             //  03
+  float    getCurrent();           //  04
+  bool     getMathOverflowFlag();  //  02
+  bool     getConversionFlag();    //  02
 
 
   //  SCALE HELPERS

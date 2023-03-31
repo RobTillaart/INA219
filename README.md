@@ -60,16 +60,12 @@ This is just one readRegister call, similar to most functions.
 
 Above 600 KHz there is little performance gain. 
 
-|  speed  |  time  |  speed  |  time  |
-|:-------:|:------:|:-------:|:------:|
-|  100000 |   560  |  150000 |   396  |
-|  200000 |   320  |  250000 |   272  |
-|  300000 |   232  |  350000 |   208  |
-|  400000 |   196  |  450000 |   176  |
-|  500000 |   172  |  550000 |   164  |
-|  600000 |   152  |  650000 |   152  |
-|  700000 |   144  |  750000 |   144  |
-|  800000 |   140  |         |        |
+|  speed  |  time  |  speed  |  time  |  speed  |  time  |  speed  |  time  |
+|:-------:|:------:|:-------:|:------:|:-------:|:------:|:-------:|:------:|
+|  100000 |   560  |  150000 |   396  |  200000 |   320  |  250000 |   272  |
+|  300000 |   232  |  350000 |   208  |  400000 |   196  |  450000 |   176  |
+|  500000 |   172  |  550000 |   164  |  600000 |   152  |  650000 |   152  |
+|  700000 |   144  |  750000 |   144  |  800000 |   140  |         |        |
 
 use **INA219_test_I2C.ino**
 
@@ -216,21 +212,20 @@ See examples..
 
 #### Must
 
-- get time to test
+- find time to test more
   - test different loads
-  - write and verify examples
   - all functions.
 - update documentation
+- Math overflow flag  (8.6.3.2)
 
 
 #### Should 
 
 - create unit tests
 - test performance
-  - verify I2C bus speed
   - verify conversion time
+- write and verify examples
 - Conversion ready flag  (8.6.3.2)
-- Math overflow flag  (8.6.3.2)
 - add a **setCurrentLSB(uint16_t mA)** function ?
   - maxAmpere as derived value
 

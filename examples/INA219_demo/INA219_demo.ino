@@ -39,13 +39,13 @@ void setup()
   //  delay(10000);
 
   Serial.println(INA.getBusVoltageRange());
-  
+
 }
 
 
 void loop()
 {
-  Serial.println("\n\tBUS\t\tSHUNT\t\tCURRENT\t\tPOWER");
+  Serial.println("\n\tBUS\t\tSHUNT\t\tCURRENT\t\tPOWER\t\tOVF\t\tCNVR");
   for (int i = 0; i < 20; i++)
   {
     Serial.print("\t");
@@ -56,10 +56,14 @@ void loop()
     Serial.print(INA.getCurrent_mA(), 2);
     Serial.print("\t\t");
     Serial.print(INA.getPower_mW(), 2);
+    Serial.print("\t\t");
+    Serial.print(INA.getMathOverflowFlag());
+    Serial.print("\t\t");
+    Serial.print(INA.getConversionFlag());
     Serial.println();
     delay(1000);
   }
-  delay(10000);
+  delay(1000);
 }
 
 

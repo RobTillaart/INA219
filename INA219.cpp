@@ -88,7 +88,7 @@ float INA219::getBusVoltage()
 {
   uint16_t value = _readRegister(INA219_BUS_VOLTAGE);
   uint8_t flags = value & 0x03;
-  //  overflow handling
+  //  math overflow handling
   if (flags & 0x01) return -100;
   float voltage = (value >> 3)  * 4e-3;   //  fixed 4 mV
   return voltage;
@@ -107,6 +107,20 @@ float INA219::getCurrent()
 {
   int16_t value = _readRegister(INA219_CURRENT);
   return value * _current_LSB;
+}
+
+
+bool INA219::getMathOverflowFlag()
+{
+  uint16_t value = _readRegister(INA219_BUS_VOLTAGE);
+  return ((value & 0x0001) == 0x0001);
+}
+
+
+bool INA219::getConversionFlag()
+{
+  uint16_t value = _readRegister(INA219_BUS_VOLTAGE);
+  return ((value & 0x0002) == 0x0002);
 }
 
 

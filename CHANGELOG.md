@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - fix setBusADC() range check
 - fix setShuntADC() range check
 - fix setMode() range check
+- add getMathOverflowFlag()
+- add getConversionFlag()
 - add example to test settings
 - add example to test I2C speed
 - update readme.md
