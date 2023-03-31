@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - fix setBusADC() range check
 - fix setShuntADC() range check
 - fix setMode() range check
+- add example to test settings
 - update readme.md
 - update GitHub actions
 - update license 2023
