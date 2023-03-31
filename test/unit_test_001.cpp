@@ -65,9 +65,8 @@ unittest(test_constructor)
 
   assertTrue(INA.isCalibrated());
   assertEqualFloat(5.0/32768, INA.getCurrentLSB(), 0.0001);
-  assertEqualFloat(5.000,     INA.getShunt(), 0.001);
-  assertEqualFloat(0.002,     INA.getMaxCurrent(), 0.001);
-
+  assertEqualFloat(0.002,     INA.getShunt(), 0.001);
+  assertEqualFloat(5.000,     INA.getMaxCurrent(), 0.001);
 }
 
 
