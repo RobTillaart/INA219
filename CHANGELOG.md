@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - fix setShuntADC() range check
 - fix setMode() range check
 - add example to test settings
+- add example to test I2C speed
 - update readme.md
 - update GitHub actions
 - update license 2023

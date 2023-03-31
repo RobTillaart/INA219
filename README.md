@@ -15,8 +15,7 @@ Arduino library for INA219 voltage, current and power sensor.
 
 **Experimental** library for the INA219 power sensor.
 
-Not tested as I have no hardware available.
-So usage remarks and comments are welcome.
+Minimal tested, so usage remarks and comments are welcome.
 
 Read datasheet for details.
 
@@ -53,8 +52,26 @@ The address depends on how the A0 and A1 address lines are connected to the SCL,
 
 #### Performance
 
-Datasheet states it supports 1 KHz .. 2.56 MHz. (to be verified).
+Datasheet states it supports 1 KHz .. 2.56 MHz.
 Note: higher speeds need smaller pull up resistors.
+
+Some timings in micros for **INA.getMode()** on an Arduino UNO.
+This is just one readRegister call, similar to most functions.
+
+Above 600 KHz there is little performance gain. 
+
+|  speed  |  time  |  speed  |  time  |
+|:-------:|:------:|:-------:|:------:|
+|  100000 |   560  |  150000 |   396  |
+|  200000 |   320  |  250000 |   272  |
+|  300000 |   232  |  350000 |   208  |
+|  400000 |   196  |  450000 |   176  |
+|  500000 |   172  |  550000 |   164  |
+|  600000 |   152  |  650000 |   152  |
+|  700000 |   144  |  750000 |   144  |
+|  800000 |   140  |         |        |
+
+use **INA219_test_I2C.ino**
 
 
 ## Interface
@@ -199,17 +216,17 @@ See examples..
 
 #### Must
 
-- get hardware (+ time) to test
-- test different loads
-- write and verify examples
+- get time to test
+  - test different loads
+  - write and verify examples
   - all functions.
 - update documentation
 
 
 #### Should 
 
-- create more unit tests
-- performance
+- create unit tests
+- test performance
   - verify I2C bus speed
   - verify conversion time
 - Conversion ready flag  (8.6.3.2)
