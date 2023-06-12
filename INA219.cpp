@@ -56,7 +56,7 @@ bool INA219::begin(const uint8_t sda, const uint8_t scl)
   return true;
 }
 #elif defined (ARDUINO_ARCH_RP2040) && !defined(__MBED__)
-bool INA219::begin(int sda, int scl)
+bool INA219::begin(const uint8_t sda, const uint8_t scl)
 {
   _wire->setSDA(sda);
   _wire->setSCL(scl);
