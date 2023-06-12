@@ -100,6 +100,7 @@ float INA219::getBusVoltage()
   uint8_t flags = value & 0x03;
   //  math overflow handling
   if (flags & 0x01) return -100;
+  //  if flags && 0x02 ==> convert flag; not handled
   float voltage = (value >> 3)  * 4e-3;   //  fixed 4 mV
   return voltage;
 }
@@ -167,7 +168,7 @@ uint8_t INA219::getBusVoltageRange()
 {
   uint16_t config = _readRegister(INA219_CONFIGURATION);
   if (config & INA219_CONF_BUS_RANGE_VOLTAGE) return 32;
-  return 16;
+  return 16;  //  volts
 }
 
 
