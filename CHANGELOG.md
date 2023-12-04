@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fix #8, refactor API - support ESP32-S3
 - update readme.md
 - update examples
+- add **getAddress()**
 
 ----
 

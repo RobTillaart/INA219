@@ -49,9 +49,8 @@ before calling **begin()**.
 
 #### Related
 
-- https://www.ti.com/product/INA226#tech-docs
-- https://www.ti.com/product/INA226#params
-- https://www.ti.com/document-viewer/INA226/datasheet
+- https://www.ti.com/product/INA219#tech-docs
+- https://www.ti.com/document-viewer/INA219/datasheet
 - https://github.com/RobTillaart/INA219
 - https://github.com/RobTillaart/INA226
 
