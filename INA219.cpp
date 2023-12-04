@@ -62,7 +62,7 @@ bool INA219::isConnected()
 }
 
 
-bool INA219::getAddress()
+uint8_t INA219::getAddress()
 {
   return _address;
 }
