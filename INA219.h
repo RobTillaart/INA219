@@ -25,7 +25,7 @@ public:
 
   bool     begin();
   bool     isConnected();
-  uint8_t  getAddres();
+  uint8_t  getAddress();
 
 
   //  CORE FUNCTIONS               //  Register
