@@ -32,6 +32,15 @@ Maxima, see datasheet, chapter 7, esp 7.5
 |  shunt voltage  |  320  |  mVolt  |  depends on PGA setting
 
 
+#### Related
+
+- https://www.ti.com/product/INA219#tech-docs
+- https://www.ti.com/product/INA219#params
+- https://www.ti.com/document-viewer/INA219/datasheet
+- https://github.com/RobTillaart/INA219
+- https://github.com/RobTillaart/INA226
+
+
 #### 0.2.0 Breaking change
 
 Version 0.2.0 introduced a breaking change.
