@@ -146,10 +146,6 @@ Especially useful in non-continuous modi.
 
 #### Configuration
 
-Note: the conversion runs in the background and if done the value is stored in a register. 
-The core functions can always be read from the registers, so they will not block.
-Result can be that you get the very same value if no new value is ready.
-
 - **bool reset()** software power on reset. 
 This implies that calibration with **setMaxCurrentShunt()** needs to be redone.
 See section below.
@@ -166,7 +162,24 @@ Returns false if it could not write settings to device.
 - **uint8_t getGain()** returns set factor.
 
 
-#### Configuration BUS
+#### Configuration BUS and SHUNT
+
+**Note:**
+The internal conversions runs in the background in the INA219.
+If a conversion is finished the measured value is stored in the appropriate register. 
+The last obtained values can always be read from the registers, so they will not block.
+Result can be that you get the very same value if no new data is available yet.
+This is especially true if you increase the number of samples.
+(See also discussion in #11).
+
+Using more samples reduces the noise level, but one will miss the faster 
+changes in voltage or current.
+Depending on your project needs you can choose one over the other.
+
+As a rule of thumb on could take the time between two I2C communication time 
+for reading a register as an upper limit.
+This would give a fresh reading every time. 
+NB it is always possible to average readings fetched from the device.
 
 Use one of these three so set **bus** resolution and sampling.
 
@@ -184,8 +197,6 @@ Returns false if it could not write settings to device.
 - **uint8_t getBusADC()** returns mask, see table below.
 
 
-#### Configuration SHUNT
-
 Use one of these three so set **shunt** resolution and sampling.
 
 - **bool setShuntResolution(uint8_t bits)** bits = 9..12, always 1 sample.
@@ -202,8 +213,11 @@ Returns false if it could not write settings to device.
 - **uint8_t getShuntADC()** returns mask, see table below.
 
 
+#### Resolution samples table
+
 mask = both resolution + averaging multiple samples.
 minus - == don't care
+
 
 |  bit mask  |  value  |  resolution  |  samples      | conversion time |
 |:----------:|:-------:|:-------------|:--------------|:---------------:|
