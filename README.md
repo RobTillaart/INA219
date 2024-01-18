@@ -176,10 +176,11 @@ Using more samples reduces the noise level, but one will miss the faster
 changes in voltage or current.
 Depending on your project needs you can choose one over the other.
 
-As a rule of thumb on could take the time between two I2C communication time 
-for reading a register as an upper limit.
-This would give a fresh reading every time. 
-NB it is always possible to average readings fetched from the device.
+As a rule of thumb one could take the time between two I2C reads of 
+a register as an upper limit.
+This would result in a fresh measurement every time one reads the register. 
+NB it is always possible to average readings fetched from the device
+in your own code.
 
 Use one of these three so set **bus** resolution and sampling.
 
