@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [0.3.0] - 2024-03-15
 - Fix #14, change round to truncate.
-- update GitHub action to v4
+- update json check to v2
 - update readme.md
 - minor edits
 
