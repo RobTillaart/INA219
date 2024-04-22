@@ -94,7 +94,7 @@ float INA219::getBusVoltage()
 float INA219::getPower()
 {
   uint16_t value = _readRegister(INA219_POWER);
-  return value * 20 * _current_LSB;
+  return value * _current_LSB * 20;
 }
 
 //  TODO CHECK
