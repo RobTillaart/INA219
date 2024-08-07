@@ -74,7 +74,7 @@ uint8_t INA219::getAddress()
 //
 float INA219::getShuntVoltage()
 {
-  uint16_t value = _readRegister(INA219_SHUNT_VOLTAGE);
+  int16_t value = _readRegister(INA219_SHUNT_VOLTAGE);
   return value * 1e-5;  //  fixed 10 uV
 }
 
