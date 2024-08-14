@@ -167,6 +167,7 @@ bool INA219::setGain(uint8_t factor)
   }
   uint16_t config = _readRegister(INA219_CONFIGURATION);
   config &= ~INA219_CONF_PROG_GAIN;
+  //  factor == 1 ==> mask = 00
   if      (factor == 2) config |= (1 << 11);
   else if (factor == 4) config |= (2 << 11);
   else if (factor == 8) config |= (3 << 11);

@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - fix **float getShuntVoltage()** for negative values, kudos to aguilerabr
 - add **int getMaxShuntVoltage()**, depends on GAIN (Table 7).
 - removed default for **setGain()** as it was not sensors default.
+- update readme.md
 
 ----
 

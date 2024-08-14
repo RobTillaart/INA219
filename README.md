@@ -160,8 +160,8 @@ Determines the shunt voltage range. 40, 80, 160 or 320 mV.
 Returns false if factor is not a valid value.
 Returns false if it could not write settings to device.
 - **uint8_t getGain()** returns set factor.
-- **int getMaxShuntVoltage()** returns 40, 80, 160 or 320 (default).
-Value in millivolts mV.
+- **int getMaxShuntVoltage()** returns 40, 80, 160 or 320 (mV).
+320 is the sensors default.
 
 
 #### Configuration BUS and SHUNT
