@@ -1,6 +1,6 @@
 //    FILE: INA219.h
 //  AUTHOR: Rob Tillaart
-// VERSION: 0.3.1
+// VERSION: 0.4.0
 //    DATE: 2021-05-18
 // PURPOSE: Arduino library for INA219 voltage, current and power sensor
 //     URL: https://github.com/RobTillaart/INA219
@@ -184,6 +184,13 @@ uint8_t INA219::getGain()
   else if (mask == 0x0800) return 2;
   else if (mask == 0x1000) return 4;
   return 8;
+}
+
+
+int INA219::getMaxShuntVoltage()
+{
+  int gain = getGain();  //  1,  2,  4,   8
+  return gain * 40;      //  40, 80, 160, 320
 }
 
 
