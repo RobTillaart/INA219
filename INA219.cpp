@@ -44,6 +44,7 @@ INA219::INA219(const uint8_t address, TwoWire *wire)
   _current_LSB = 0;
   _maxCurrent  = 0;
   _shunt       = 0;
+  _error       = 0;
 }
 
 
